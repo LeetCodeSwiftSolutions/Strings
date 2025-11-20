@@ -1,7 +1,10 @@
-/* Dada una cadena s con numerales romanos (I, V, X, L, C, D, M), conviértela a entero sumando valores de izquierda a derecha, excepto cuando un símbolo menor va antes de uno mayor, caso en el que se resta (pares válidos: IV, IX, XL, XC, CD, CM). La cadena es válida, tiene longitud 1–15 y representa un número en [1, 3999]. Devuelve el entero resultante.
+/* CONVERSIÓN DE NÚMERO ROMANO A ENTERO
+ Dada una cadena s con numerales romanos (I, V, X, L, C, D, M), conviértela a entero sumando valores de izquierda a derecha, excepto cuando un símbolo menor va antes de uno mayor, caso en el que se resta (pares válidos: IV, IX, XL, XC, CD, CM). La cadena es válida, tiene longitud 1–15 y representa un número en [1, 3999]. Devuelve el entero resultante.
 
  Given a string s of Roman numerals (I, V, X, L, C, D, M), convert it to an integer by adding values left to right, except when a smaller symbol precedes a larger one, in which case subtract it (valid pairs: IV, IX, XL, XC, CD, CM). The string is valid, length 1–15, and represents a number in [1, 3999]. Return the resulting integer. */
 
+
+/// Solución original
 func romanToInt(_ s: String) -> Int {
     var value = 0
     var index = s.startIndex // Usamos el método .startIndex en vez de iniciar con un índice Int en cero.
@@ -43,6 +46,7 @@ func romanToInt(_ s: String) -> Int {
     return value
 }
 
+/// Pruebas
 romanToInt( "MCMXCIV")
 romanToInt( "MMXXIII")
 romanToInt( "XVII")

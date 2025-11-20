@@ -1,6 +1,7 @@
-/* Dadas dos cadenas, ransomNote y magazine, determina si puedes formar exactamente ransomNote usando letras de magazine. Cada letra de magazine solo puede usarse una vez. Si falta alguna letra o no hay suficiente cantidad, la respuesta es false; si alcanza para todas, true. Ambas cadenas usan solo minúsculas y pueden tener hasta 10^5 caracteres.
-
-Given two strings, ransomNote and magazine, determine whether you can form ransomNote exactly using letters from magazine. Each letter from magazine may be used at most once. If any required letter is missing or insufficient, return false; otherwise return true. Both strings contain only lowercase letters and can be up to 10^5 characters long. */
+/* NOTA DE RESCATE
+ Dadas dos cadenas, ransomNote y magazine, determina si puedes formar exactamente ransomNote usando letras de magazine. Cada letra de magazine solo puede usarse una vez. Si falta alguna letra o no hay suficiente cantidad, la respuesta es false; si alcanza para todas, true. Ambas cadenas usan solo minúsculas y pueden tener hasta 10^5 caracteres.
+ 
+ Given two strings, ransomNote and magazine, determine whether you can form ransomNote exactly using letters from magazine. Each letter from magazine may be used at most once. If any required letter is missing or insufficient, return false; otherwise return true. Both strings contain only lowercase letters and can be up to 10^5 characters long. */
 
 /// Solución original
 func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
@@ -21,6 +22,7 @@ func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
     return true
 }
 
+/// Pruebas
 canConstruct("naranja", "mandarina")
 canConstruct("amigo", "murcielago")
 
