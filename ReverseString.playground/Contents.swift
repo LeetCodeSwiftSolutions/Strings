@@ -22,3 +22,21 @@ func reverseString(_ s: inout [Character]) {
 var str: [Character] = ["h", "e", "l", "l", "o"]
 reverseString(&str)
 print(str)
+
+
+/// Solución original optimizada
+func reverseStringOptimized(_ s: inout [Character]) {
+    var low = 0
+    var high = s.count - 1
+    
+    while low < high {
+        s.swapAt(low, high)
+        low += 1
+        high -= 1
+    }
+}
+
+/// Pruebas de la función optimizada
+var str2: [Character] = ["h", "e", "l", "l", "o", " " , "w", "o", "r", "l", "d"]
+reverseStringOptimized(&str2)
+print(str2)
