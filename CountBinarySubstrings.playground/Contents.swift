@@ -9,34 +9,34 @@
 /// Beats 29% in Runtime & 36% in Memory.
 ///
 func countBinarySubstrings(_ s: String) -> Int {
-    var zeros = 0
     var ones = 0
-    var arr = Array(s)
-    var counter = 1
-    var ans = 0
+    var zeros = 0
+    var groupCount = 1
+    var validSubstrings = 0
+    var previousChar: Character? = nil
 
-    for i in 0..<arr.count {
-        if i > 0 && arr[i-1] != arr[i] { counter += 1 }
-        switch arr[i] {
-            case Character("0"):
+    for char in s {
+        if let prev = previousChar, prev != char { groupCount += 1 }
+        if char == "0" {
             zeros += 1
-            if counter > 2 {
-                ans += min(zeros-1, ones)
+            if groupCount > 2 {
+                validSubstrings += min(zeros-1, ones)
                 zeros = 1
-                counter = 2
+                groupCount = 2
             }
-            default:
+        } else {
             ones += 1
-            if counter > 2 {
-                ans += min(zeros, ones-1)
+            if groupCount > 2 {
+                validSubstrings += min(zeros, ones-1)
                 ones = 1
-                counter = 2
+                groupCount = 2
             }
         }
+        previousChar = char
     }
-    
-    ans += min(zeros, ones)
-    return ans
+
+    validSubstrings += min(zeros, ones)
+    return validSubstrings
 }
 
 
